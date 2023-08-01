@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  ## MySQL Docker Compose Config
+  spring-boot-mysql:
+    container_name: spring-boot-mysql
+    image: mysql:8.0
+    volumes:
+      - ./spring-boot-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_example
+      MYSQL_USER: vanthuan
+      MYSQL_PASSWORD: password
+    restart: unless-stopped
